@@ -1,0 +1,30 @@
+2017-06-26 16:34:38 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 打开浏览器 执行成功.
+2017-06-26 16:34:41 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 访问126邮箱地址 执行成功.
+2017-06-26 16:34:43 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 暂停2秒 执行成功.
+2017-06-26 16:34:43 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 进入登录框的frame 执行成功.
+2017-06-26 16:34:44 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 暂停1秒 执行成功.
+2017-06-26 16:34:44 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 输入用户名 执行成功.
+2017-06-26 16:34:44 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 输入密码 执行成功.
+2017-06-26 16:34:44 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 点击登录按钮 执行成功.
+2017-06-26 16:34:47 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 等待3秒，完成登录操作 执行成功.
+2017-06-26 16:34:47 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 断言登录成功 执行成功.
+2017-06-26 16:34:47 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 点击通讯录 执行成功.
+2017-06-26 16:34:49 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 暂停2秒 执行成功.
+2017-06-26 16:34:56 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 点击新建联系人 执行成功.
+2017-06-26 16:34:57 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 暂停1秒 执行成功.
+2017-06-26 16:34:57 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 输入姓名 执行成功.
+2017-06-26 16:34:57 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 输入邮箱 执行成功.
+2017-06-26 16:34:57 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 输入手机号 执行成功.
+2017-06-26 16:34:58 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 添加备注 执行成功.
+2017-06-26 16:35:00 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 暂停2秒 执行成功.
+2017-06-26 16:35:00 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 点击确定按钮 执行成功.
+2017-06-26 16:35:02 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 暂停2秒 执行成功.
+2017-06-26 16:35:02 D:\KeyWordFramework\Util\Log.py Log.py[line:14] ERROR 断言创建成功执行失败:Traceback (most recent call last):
+  File "D:/KeyWordFramework/TestScript/TestCase2.py", line 41, in <module>
+    exec(command_line)
+  File "<string>", line 1, in <module>
+  File "D:\KeyWordFramework\Action\Action.py", line 85, in assert_word
+    raise e
+AssertionError
+
+2017-06-26 16:35:05 D:\KeyWordFramework\Util\Log.py Log.py[line:18] INFO 关闭浏览器 执行成功.

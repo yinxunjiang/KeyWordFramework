@@ -8,6 +8,8 @@ project_path=os.path.dirname(os.path.dirname(__file__))
 #测试数据路径
 test_data_excel_path=os.path.join(project_path,'TestData',u"126邮箱的测试用例.xlsx")
 #test_data_excel_path=project_path+u"/testdata/126邮箱联系人.xlsx"
+#日志文件
+log_file_path=os.path.join(project_path,'conf','Logger.conf')
 #获取页面元素配置文件路径
 configFilePath=os.path.join(project_path,'conf','PageElementLocator.ini')
 #浏览器驱动路径
@@ -27,6 +29,7 @@ execute_time_no=6
 result_no=7
 shot_picture_no=8
 exception_no=9
+
 
 #老师定义的
 #excel列的含义

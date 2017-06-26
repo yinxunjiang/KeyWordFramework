@@ -2,12 +2,10 @@
 import logging
 import logging.config
 import os
-import ProjectVar.Var
+from ProjectVar.Var import *
 #读取配置日志文件
 #log_file_path=ProjectVar.var.project_path+'\\conf\\Logger.conf'
-log_file_path=os.path.join(ProjectVar.Var.project_path,'conf','Logger.conf')
 logging.config.fileConfig(log_file_path)
-
 #选择一个日志格式
 logger=logging.getLogger("example02") #example01
 

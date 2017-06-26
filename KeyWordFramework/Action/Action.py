@@ -7,6 +7,7 @@ import traceback
 from Util.FormatTime import *
 
 driver=None
+#打开浏览器操作
 def open_browser(browsername,*args):
     global driver
     try:
@@ -18,23 +19,25 @@ def open_browser(browsername,*args):
             driver=webdriver.Firefox(executable_path=firefoxDriverFilePath)
     except Exception,e:
         raise e
+#访问网址操作
 def visit_url(url,*args):
     global driver
     try:
         driver.get(url)
     except Exception,e:
         raise e
-
+#等待操作
 def pause(seconds):
     seconds=float(seconds)
     time.sleep(seconds)
-
+#进入frame结构操作
 def enter_frame(locatormethod,locatorexpression,*args):
     global driver
     try:
         driver.switch_to.frame(getElement(driver,locatormethod,locatorexpression))
     except Exception,e:
         raise e
+#输入操作
 def input_string(locatormethod,locatorexpression,content,*args):
     global driver
     try:
@@ -43,7 +46,7 @@ def input_string(locatormethod,locatorexpression,content,*args):
         element.send_keys(content)
     except Exception,e:
         raise e
-
+#点击操作
 def click(locatormethod,locatorexpression,*args):
     global driver
     try:
@@ -51,13 +54,14 @@ def click(locatormethod,locatorexpression,*args):
         element.click()
     except Exception,e:
         raise e
+#关闭浏览器操作
 def close_browser(*args):
     global driver
     try:
         driver.quit()
     except Exception,e:
         raise e
-#截图
+#截图，截图放到ScreenPictures目录下的相应文件夹下，根据日期动态创建保存目录
 def get_screen_shot(picturepath,dirname,filename):
     global driver
     try:
@@ -66,9 +70,9 @@ def get_screen_shot(picturepath,dirname,filename):
         driver.get_screenshot_as_file(os.path.join(picturepath,dirname,filename)+'.png')
     except Exception,e:
         raise e
-    return os.path.join(picturepath,dirname,filename,'.png')
-
-
+    #返回图片地址
+    return os.path.join(picturepath,dirname,filename)+'.png'
+#断言操作，判断某个内容是否在页面源码中
 def assert_word(word,*args):
     global driver
     try:
@@ -76,10 +80,11 @@ def assert_word(word,*args):
         #print '断言成功！'
         #get_screen_shot(capturepicturepath,dates(),times())
     except Exception,e:
+        #断言失败，将页面截图保存，截图存放在当前年月日的目录里，截图名称以当前时分秒命名
         get_screen_shot(errorpicturepath,dates(),times())
         raise e
 
-
+'''
 def login(usernameandpassword,*args):
     username,password=usernameandpassword.split("||")
     open_browser('chrome')
@@ -106,7 +111,7 @@ def add_new_contacts(name,email,phone,remark,*args):
     pause(2)
     assert_word(name)
     #get_screen_shot(capturepicturepath+'/22.png')
-
+'''
 
 
 if __name__=='__main__':

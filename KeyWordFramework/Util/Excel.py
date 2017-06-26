@@ -5,6 +5,7 @@ import time
 import os
 from FormatTime import date_time_chinese
 from openpyxl.drawing.image import Image
+from PIL import Image
 
 class ParseExcel(object):
     def __init__(self,excel_file_path):
@@ -37,6 +38,9 @@ class ParseExcel(object):
         sheet_name=self.workbook.get_sheet_names()[sheet_index]
         self.sheet=self.get_sheet_by_name(sheet_name)
         return self.get_sheet_by_name(sheet_name)
+    #获取全部sheet页名称
+    def get_all_sheet_names(self):
+        return self.workbook.sheetnames
 
     #获取默认sheet中最大的行数
     def get_max_row_no(self):
@@ -90,43 +94,15 @@ class ParseExcel(object):
     def write_cell_current_time(self,row_no,col_no):
         self.sheet.cell(row=row_no, column=col_no).value =date_time_chinese()
         self.workbook.save(self.excel_file_path)
+    #保存
     def workbook_save(self):
         self.workbook.save(self.excel_file_path)
-    # create an image
-    def add_images(self,filepath,position):
-        self.img1 = Image(filepath)
-        self.sheet.add_image(self.img1, position)
+
 
 if __name__=='__main__':
     pe=ParseExcel("test.xlsx")
-    pe.set_sheet_by_index(0)
-    print pe.get_default_name()
-    pe.set_sheet_by_name("Sheet2")
-    print pe.get_default_name()
-    print pe.get_sheet_by_name("Sheet2")
-    print pe.get_sheet_by_index(0)
-    print pe.get_max_row_no()
-    print pe.get_max_col_no()
-    print pe.get_min_row_no()
-    print pe.get_min_col_no()
-    print pe.get_all_rows()[0]
-    print len(pe.get_all_rows())
-    for cell in pe.get_all_rows()[0]:
-        print cell.value
-    print pe.get_all_cols()
-    for col in pe.get_all_cols()[0]:
-        print col.value
-    for cell in pe.get_single_row(0):
-        print cell.value
-    for col in pe.get_single_col(0):
-        print col.value
-    print pe.get_cell(1,1)
+    print pe.get_all_sheet_names()
 
-    print pe.get_cell_content(1,1)
-    pe.write_cell_content(8,8,"光荣之路")
-    print pe.get_cell_content(8, 8)
-    pe.write_cell_current_time(8, 8)
-    print pe.get_cell_content(8, 8)
 
 
 
